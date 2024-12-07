@@ -1,0 +1,79 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+	<div class="col-12">
+		<div class="container">
+
+			<div class="card">
+				<form th:action="@{/cita/guardar}" method="POST" id="doctorForm">
+
+					<div class="card-header bg-dark text-center text-white">
+						<h3>
+							<a th:href="@{/cita/}" class="btn bg-dark btn-secondary"
+								style="text-align: left;"><</a> Registrar Citas
+						</h3>
+					</div>
+					<div class="card-body">
+							<div class="row">
+								<div class="col-2">
+									<label for="consultorio"><b>Consultorio</b></label>
+								</div>
+								<div class="col-4">
+									<input type="text" name="consultorio" id="consultorio"
+										class="form-control" />
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-2">
+									<label for="doctor"><b>Doctor</b></label>
+								</div>
+								<div class="col-4" style="text-align: center;">
+									<input type="text" name="doctor" id="doctor" class="form-control" />
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-2">
+									<label for="horario"><b>Horario</b></label>
+								</div>
+								<div class="col-4">
+									<input type="datetime-local" name="horario" id="horario" class="form-control" />
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-2">
+									<label for="nombrePaciente"><b>Nombre del paciente</b></label>
+								</div>
+								<div class="col-4">
+									<input type="text" name="nombrePaciente" id="nombrePaciente" class="form-control" />
+								</div>
+							</div>
+							<br />
+					</div>
+					<div class="card-footer text-muted" style="text-align: center;">
+						<button type="submit" class="btn btn-success"
+							style="text-align: center;">
+							Guardar Cita <i class="fa fa-plus-square" aria-hidden="true"></i>
+						</button>
+						<a th:href="@{/invoice/getAllInvoices}" class="btn btn-primary">Mostrar
+							Citas</a>
+					</div>
+				</form>
+
+				<div th:if="${message!=null}" class="card-footer bg-white text-info">
+					<span th:text="${message}"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
