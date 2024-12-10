@@ -24,6 +24,7 @@ public class Cita {
 	@DateTimeFormat
 	private String horario;
 	private String nombrePaciente;
+	
 	public Cita(Long consultorio, Long doctor, String horario, String nombrePaciente) {
 		super();
 		this.consultorio = consultorio;
@@ -31,7 +32,22 @@ public class Cita {
 		this.horario = horario;
 		this.nombrePaciente = nombrePaciente;
 	}
-	
+	public Long getId(){
+		return id;
+	}
+	public Long getConsultorio(){
+		return consultorio;
+	}
+	public Long getDoctor(){
+		return doctor;
+	}
+	public String getHorario(){
+		return horario;
+	}
+	public String getNombrePaciente(){
+		return nombrePaciente;
+	}
+
 	@Override
 	public String toString() {
 		return consultorio+" "+doctor+" "+nombrePaciente+" ";

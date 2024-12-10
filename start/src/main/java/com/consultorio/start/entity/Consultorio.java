@@ -22,11 +22,21 @@ public class Consultorio {
 	public String toString() {
 		return numero+" "+piso+" ";
 	}
+	
 
 	public Consultorio(int numero, String piso) {
 		super();
 		this.numero = numero;
 		this.piso = piso;
+	}
+	public Long getId(){
+		return id;
+	}
+	public int getNumero(){
+		return numero;
+	}
+	public String getPiso(){
+		return piso;
 	}
 	
 }
