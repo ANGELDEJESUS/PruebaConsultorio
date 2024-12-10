@@ -1,7 +1,0 @@
-com\consultorio\start\service\DoctorService.class
-com\consultorio\start\exception\DoctorExceptions.class
-com\consultorio\start\controller\DoctorController.class
-com\consultorio\start\entity\Doctor.class
-com\consultorio\start\StartApplication.class
-com\consultorio\start\repository\DoctorRepository.class
-com\consultorio\start\service\imp\DoctorServiceImp.class
