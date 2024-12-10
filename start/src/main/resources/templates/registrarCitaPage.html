@@ -26,8 +26,12 @@
 									<label for="consultorio"><b>Consultorio</b></label>
 								</div>
 								<div class="col-4">
-									<input type="text" name="consultorio" id="consultorio"
-										class="form-control" />
+										<div class="input-group mb-3">
+											<select   class="form-control" id="consultorio" name="consultorio" aria-label="Seleccione Consultorio" title="Seleccione Consultorio">
+											  <option value="seleccione" selected>Seleccione Consultorio...</option>
+											  <option aria-placeholder="Seleccione..."  th:each="obj:${consultorios}" th:value="${obj.id}" th:text="${obj.numero}"></option>
+											</select>
+										</div>
 								</div>
 							</div>
 							<br />
@@ -35,8 +39,11 @@
 								<div class="col-2">
 									<label for="doctor"><b>Doctor</b></label>
 								</div>
-								<div class="col-4" style="text-align: center;">
-									<input type="text" name="doctor" id="doctor" class="form-control" />
+								<div class="col-4">
+									<select   class="form-control" id="doctor" name="doctor" aria-label="Seleccione Doctor" title="Seleccione Doctor">
+										<option value="seleccione" selected>Seleccione Doctor...</option>
+										<option aria-placeholder="Seleccione..."  th:each="obj:${doctores}" th:value="${obj.id}" th:text="${obj.nombre+'	'+obj.ap1+'	'+obj.esp}"></option>
+									</select>
 								</div>
 							</div>
 							<br />
@@ -64,7 +71,7 @@
 							style="text-align: center;">
 							Guardar Cita <i class="fa fa-plus-square" aria-hidden="true"></i>
 						</button>
-						<a th:href="@{/invoice/getAllInvoices}" class="btn btn-primary">Mostrar
+						<a th:href="@{/cita/obtenercitas}" class="btn btn-primary">Mostrar
 							Citas</a>
 					</div>
 				</form>

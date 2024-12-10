@@ -1,5 +1,7 @@
 package com.consultorio.start.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.consultorio.start.entity.Consultorio;
 import com.consultorio.start.service.ConsultorioService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequestMapping("consultorio")
@@ -34,4 +38,12 @@ public class ConsultorioController {
 		model.addAttribute("message","Registro: "+co+ "guardado");
 		return "registrarConsultorioPage";
 	}
+	@GetMapping("/obtenerconsultorios")
+	public String obtenerConsultorios(@RequestParam(value = "message",required=false) String message,Model model) {
+		List<Consultorio> co = consultorioService.getAllConsultorio();
+		model.addAttribute("list", co);
+		model.addAttribute("message", message);
+		return "mostrarConsultoriosPage";
+	}
+	
 }

@@ -21,10 +21,6 @@ public class Doctor {
 	private String ap2;
 	private String esp;
 	
-	public Doctor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	public Doctor(String nombre, String ap1, String ap2, String esp) {
 		super();

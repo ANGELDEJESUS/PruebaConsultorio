@@ -38,7 +38,7 @@ public class DoctorController {
 		return "registrarDoctorPage";
 	}
 	 @GetMapping("/obtenerDoctores")
-	    public String getAllInvoices(
+	    public String obtenerDoctores(
 	            @RequestParam(value = "message", required = false) String message,
 	            Model model
 	            ) {
